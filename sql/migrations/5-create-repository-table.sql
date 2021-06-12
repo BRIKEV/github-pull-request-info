@@ -1,7 +1,7 @@
 --- Create table to store repositories
 CREATE TABLE info.repository (
   id INT PRIMARY KEY,
-  title VARCHAR (150) NOT NULL,
+  name VARCHAR (150) NOT NULL,
   owner_id INTEGER REFERENCES info.org_owner(id) ON DELETE CASCADE,
   created_on TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()),
   updated_on TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now())

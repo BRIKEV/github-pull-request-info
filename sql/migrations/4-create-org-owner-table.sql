@@ -1,7 +1,8 @@
 --- Create table to store organizations or user owners
 CREATE TABLE info.org_owner (
   id INT PRIMARY KEY,
-  title VARCHAR (150) NOT NULL,
+  name VARCHAR (150) NOT NULL,
+  type VARCHAR (30) NOT NULL,
   created_on TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()),
   updated_on TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now())
 );
