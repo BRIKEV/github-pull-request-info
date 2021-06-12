@@ -1,3 +1,8 @@
+const auth = {
+  username: process.env.GITHUB_USER || '',
+  password: process.env.GITHUB_TOKEN || '',
+};
+
 module.exports = {
   server: {
     host: '0.0.0.0',
@@ -70,5 +75,25 @@ module.exports = {
       'service',
     ],
     exclude: ['password', 'secret', 'token', 'request.headers.cookie', 'dependencies', 'devDependencies'],
+  },
+  /** --- Github API endpoints --- */
+  github: {
+    api: {
+      getPRs: {
+        url: 'https://api.github.com/repos/:owner/:repository/pulls',
+        method: 'get',
+        auth,
+      },
+      getReviewers: {
+        url: 'https://api.github.com/repos/:owner/:repository/pulls/:prNumber/reviews',
+        method: 'get',
+        auth,
+      },
+      getPRDetail: {
+        url: 'https://api.github.com/repos/:owner/:repository/pulls/:prrNumber',
+        method: 'get',
+        auth,
+      },
+    },
   },
 };
