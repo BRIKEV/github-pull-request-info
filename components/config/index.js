@@ -1,4 +1,4 @@
-const System = require('systemic');
+const Systemic = require('systemic');
 const confabulous = require('./confabulous');
 
-module.exports = new System({ name: 'config' }).add('config', confabulous(), { scoped: true });
+module.exports = new Systemic({ name: 'config' }).add('config', confabulous(), { scoped: true });
