@@ -50,11 +50,11 @@ module.exports = pgAPI => ({
    * @param {boolean} [isTargetConstraint] - Determines if the value of
    *  'conflictTarget' corresponds to a column name or a database constraint.
    */
-  upsert: (tableName, rowData, { conflictTarget, isTargetConstraint } = {}) => {
+  upsert: (tableName, rowData, { conflictTarget, isTargetConstraint } = {}, client = pgAPI) => {
     const columnsWithValue = Object.keys(rowData)
       .filter(key => rowData[key] !== undefined);
 
-    return pgAPI.query(
+    return client.query(
       buildUpsertQuery(tableName, columnsWithValue, conflictTarget, isTargetConstraint),
       columnsWithValue.map(key => rowData[key]),
     );
