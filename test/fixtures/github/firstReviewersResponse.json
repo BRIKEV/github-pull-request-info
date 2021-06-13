@@ -1,0 +1,80 @@
+[
+  {
+      "id": 123,
+      "node_id": "randomGithubHash",
+      "user": {
+          "login": "userTest3",
+          "id": 1,
+          "node_id": "randomGithubHash",
+          "avatar_url": "https://avatars.githubusercontent.com/u/1?u=cdcc6f2e6c19e6d25c1788f9e1fab78675ca214a&v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/userTest3",
+          "html_url": "https://github.com/userTest3",
+          "followers_url": "https://api.github.com/users/userTest3/followers",
+          "following_url": "https://api.github.com/users/userTest3/following{/other_user}",
+          "gists_url": "https://api.github.com/users/userTest3/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/userTest3/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/userTest3/subscriptions",
+          "organizations_url": "https://api.github.com/users/userTest3/orgs",
+          "repos_url": "https://api.github.com/users/userTest3/repos",
+          "events_url": "https://api.github.com/users/userTest3/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/userTest3/received_events",
+          "type": "User",
+          "site_admin": false
+      },
+      "body": "![everest-trash](https://user-images.githubusercontent.com/1/120810426-538e8400-c54b-11eb-8015-4ade87a6ea91.jpg)\r\n",
+      "state": "APPROVED",
+      "html_url": "https://github.com/test-org/test-repo/pull/1500#pullrequestreview-123",
+      "pull_request_url": "https://api.github.com/repos/test-org/test-repo/pulls/1",
+      "author_association": "CONTRIBUTOR",
+      "_links": {
+          "html": {
+              "href": "https://github.com/test-org/test-repo/pull/1500#pullrequestreview-123"
+          },
+          "pull_request": {
+              "href": "https://api.github.com/repos/test-org/test-repo/pulls/1"
+          }
+      },
+      "submitted_at": "2021-06-04T13:41:31Z",
+      "commit_id": "randomGithubHash"
+  },
+  {
+      "id": 124,
+      "node_id": "randomGithubHash",
+      "user": {
+          "login": "userTest2",
+          "id": 2,
+          "node_id": "MDQ6VXNlcjUwNDA2NDAw",
+          "avatar_url": "https://avatars.githubusercontent.com/u/2?u=9e705386dfaa0c44825b8305151d138677ad12c6&v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/userTest2",
+          "html_url": "https://github.com/userTest2",
+          "followers_url": "https://api.github.com/users/userTest2/followers",
+          "following_url": "https://api.github.com/users/userTest2/following{/other_user}",
+          "gists_url": "https://api.github.com/users/userTest2/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/userTest2/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/userTest2/subscriptions",
+          "organizations_url": "https://api.github.com/users/userTest2/orgs",
+          "repos_url": "https://api.github.com/users/userTest2/repos",
+          "events_url": "https://api.github.com/users/userTest2/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/userTest2/received_events",
+          "type": "User",
+          "site_admin": false
+      },
+      "body": "![](https://media4.giphy.com/media/Oj7yTCLSZjSt2JMwi2/giphy.gif)",
+      "state": "APPROVED",
+      "html_url": "https://github.com/test-org/test-repo/pull/1500#pullrequestreview-124",
+      "pull_request_url": "https://api.github.com/repos/test-org/test-repo/pulls/1",
+      "author_association": "CONTRIBUTOR",
+      "_links": {
+          "html": {
+              "href": "https://github.com/test-org/test-repo/pull/1500#pullrequestreview-124"
+          },
+          "pull_request": {
+              "href": "https://api.github.com/repos/test-org/test-repo/pulls/1"
+          }
+      },
+      "submitted_at": "2021-06-04T15:03:45Z",
+      "commit_id": "randomGithubHash"
+  }
+]

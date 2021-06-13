@@ -5,6 +5,9 @@ const pullRequests = require('../fixtures/github/pull_requests.json');
 const firstPullRequest = require('../fixtures/github/firstPullRequest.json');
 const secondPullRequest = require('../fixtures/github/secondPullRequest.json');
 const thirdPullRequest = require('../fixtures/github/thirdPullRequest.json');
+const firstReviewersResponse = require('../fixtures/github/firstReviewersResponse.json');
+const secondReviewersResponse = require('../fixtures/github/secondReviewersResponse.json');
+const thirdReviewersResponse = require('../fixtures/github/thirdReviewersResponse.json');
 const orgRepo = require('../fixtures/expectations/org-repo.json');
 
 describe('Digest method Tests', () => {
@@ -30,6 +33,7 @@ describe('Digest method Tests', () => {
     nock('https://api.github.com')
       .get(`/repos/${testOrg}/${testRepo}/pulls?state=closed&direction=desc`)
       .reply(200, pullRequests);
+    /** -- PR details mock -- */
     nock('https://api.github.com')
       .get(`/repos/${testOrg}/${testRepo}/pulls/1`)
       .reply(200, firstPullRequest);
@@ -39,6 +43,16 @@ describe('Digest method Tests', () => {
     nock('https://api.github.com')
       .get(`/repos/${testOrg}/${testRepo}/pulls/3`)
       .reply(200, thirdPullRequest);
+    /** -- PR reviews details mock -- */
+    nock('https://api.github.com')
+      .get(`/repos/${testOrg}/${testRepo}/pulls/1/reviews`)
+      .reply(200, firstReviewersResponse);
+    nock('https://api.github.com')
+      .get(`/repos/${testOrg}/${testRepo}/pulls/2/reviews`)
+      .reply(200, secondReviewersResponse);
+    nock('https://api.github.com')
+      .get(`/repos/${testOrg}/${testRepo}/pulls/3/reviews`)
+      .reply(200, thirdReviewersResponse);
     await controllerAPI.digest.digestRepo(testOrg, testRepo);
     const { rows: projects } = await pgAPI.query('select-org-repo');
     expect(projects).to.eql(orgRepo);

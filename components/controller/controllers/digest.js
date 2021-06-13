@@ -1,3 +1,5 @@
+const { filterByState } = require('../../../utils');
+
 module.exports = () => {
   const start = async ({ logger, github, store }) => {
     const getPRs = async (owner, repository) => {
@@ -22,18 +24,18 @@ module.exports = () => {
       url: user.url,
     });
 
-    const saveNonReviewers = async (prId, nonReviewers) => {
-      logger.info(`Saving PR (${prId}) ${nonReviewers.length} no reviewer users`);
-      const saveUsers = nonReviewers.map(async nonReviewer => {
+    const saveReviewers = async (prId, reviewers) => {
+      logger.info(`Saving PR (${prId}) ${reviewers.length} no reviewer users`);
+      const saveUsers = reviewers.map(async nonReviewer => {
         await store.upsertUser(userPayload(nonReviewer));
       });
       await Promise.all(saveUsers);
-      const saveRequest = nonReviewers.map(async nonReviewer => {
+      const saveRequest = reviewers.map(async nonReviewer => {
         await store.saveNonReviewers({
           pull_request_id: prId,
           user_id: nonReviewer.id,
-          status: 'NO_REVIEWED',
-          review_quality: 'MISSING',
+          status: nonReviewer.status || 'NO_REVIEWED',
+          review_quality: nonReviewer.reviewQuality || 'MISSING',
         });
       });
       return Promise.all(saveRequest);
@@ -67,12 +69,35 @@ module.exports = () => {
       await store.upsertPRInfo(prData);
     };
 
+    const saveReviewerDetails = async (owner, repository, prInfo) => {
+      logger.info(`Retrieving PR reviewers (${prInfo.number}) details...`);
+      const { data: githubPRReviewers } = await github.getReviewers({
+        urlParams: {
+          owner,
+          repository,
+          prNumber: prInfo.number,
+        },
+      });
+      const changeRequested = filterByState(githubPRReviewers, 'CHANGES_REQUESTED');
+      const approveChanges = filterByState(githubPRReviewers, 'APPROVED');
+      const reviewers = approveChanges.map(review => {
+        const approvedAfterRequestChanges = changeRequested.find(({ id }) => id === review.id);
+        return {
+          ...review.user,
+          status: 'REVIEWED',
+          reviewQuality: approvedAfterRequestChanges ? 'GREAT_REVIEW' : 'OK',
+        };
+      });
+      return saveReviewers(prInfo, reviewers);
+    };
+
     const processPR = (owner, repository) => async prInfo => {
       // GET PR Detail & save PR info
       await upsertPRInfo(owner, repository, prInfo);
       // Save reviewers do not review
-      await saveNonReviewers(prInfo.id, prInfo.requested_reviewers);
+      await saveReviewers(prInfo.id, prInfo.requested_reviewers);
       // Get reviews endpoint and save that info
+      await saveReviewerDetails(owner, repository, prInfo);
     };
 
     const saveProjectInfo = async (owner, repository, project) => {

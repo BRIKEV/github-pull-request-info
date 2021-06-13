@@ -520,11 +520,11 @@
       "review_comments_url": "https://api.github.com/repos/test-org/test-repo/pulls/2/comments",
       "review_comment_url": "https://api.github.com/repos/test-org/test-repo/pulls/comments{/number}",
       "comments_url": "https://api.github.com/repos/test-org/test-repo/issues/2/comments",
-      "statuses_url": "https://api.github.com/repos/test-org/test-repo/statuses/randomGithubHash",
+      "statuses_url": "https://api.github.com/repos/test-org/test-repo/statuses/f2d904c8ba11c3909639be7cc41745ff2b44c59e",
       "head": {
           "label": "test-org:chapter_exam_design",
           "ref": "chapter_exam_design",
-          "sha": "randomGithubHash",
+          "sha": "f2d904c8ba11c3909639be7cc41745ff2b44c59e",
           "user": {
               "login": "test-org",
               "id": 1,
@@ -794,7 +794,7 @@
               "href": "https://api.github.com/repos/test-org/test-repo/pulls/2/commits"
           },
           "statuses": {
-              "href": "https://api.github.com/repos/test-org/test-repo/statuses/randomGithubHash"
+              "href": "https://api.github.com/repos/test-org/test-repo/statuses/f2d904c8ba11c3909639be7cc41745ff2b44c59e"
           }
       },
       "author_association": "CONTRIBUTOR",
