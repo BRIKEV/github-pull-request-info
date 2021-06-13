@@ -2,7 +2,7 @@ module.exports = () => {
   const start = async ({ logger, github, store }) => {
     const getPRs = async (owner, repository) => {
       logger.info(`Retrieving PRs from repository ${owner}/${repository}...`);
-      const { data: githubInfo } = github.getPRs({
+      const { data: githubInfo } = await github.getPRs({
         params: {
           state: 'closed',
           direction: 'desc',
@@ -54,22 +54,22 @@ module.exports = () => {
       const repoDetails = {
         id: project.base.repo.id,
         name: project.base.repo.name,
-        owner: project.base.repo.owner.id,
+        owner_id: project.base.repo.owner.id,
       };
       const ownerDetails = {
         id: project.base.repo.owner.id,
         name: project.base.repo.owner.login,
         type: project.base.repo.owner.type,
       };
-      return store.saveProject(repoDetails, ownerDetails);
+      return store.saveProjectInfo(repoDetails, ownerDetails);
     };
 
     const digestRepo = async (owner, repository) => {
       logger.info(`Digesting repository ${owner}/${repository}`);
       const prs = await getPRs(owner, repository);
       await saveProjectInfo(owner, repository, prs[0]);
-      const processPRs = prs.map(processPR);
-      return Promise.all(processPRs);
+      // const processPRs = prs.map(processPR);
+      // return Promise.all(processPRs);
     };
     return { digestRepo };
   };
