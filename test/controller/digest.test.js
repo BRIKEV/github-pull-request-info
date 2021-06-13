@@ -63,6 +63,10 @@ describe('Digest method Tests', () => {
     const { rows: dbPullRequests } = await pgAPI.query('SELECT * FROM info.pull_request');
     expect(users).to.have.length(7);
     expect(dbPullRequests).to.have.length(3);
+    const hardPRToReview = dbPullRequests.filter(pr => pr.review_quality === 'HARD');
+    expect(hardPRToReview).to.have.length(2);
+    const goodPRToReview = dbPullRequests.filter(pr => pr.review_quality === 'GOOD');
+    expect(goodPRToReview).to.have.length(1);
     expect(noReviewedPR).to.have.length(8);
     expect(reviewedPR).to.have.length(5);
     expect(greatReviewedPR).to.have.length(1);

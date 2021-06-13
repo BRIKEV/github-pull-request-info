@@ -9,7 +9,7 @@ CREATE TABLE info.pull_request (
   deletions INT NOT NULL,
   changed_files INT NOT NULL,
   state VARCHAR (10) NOT NULL,
-  type VARCHAR (10) NOT NULL,
+  review_quality VARCHAR (60) NOT NULL,
   created_on TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()),
   updated_on TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now())
 );

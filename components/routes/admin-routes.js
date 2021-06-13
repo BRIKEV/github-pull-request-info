@@ -1,6 +1,7 @@
 const helmet = require('helmet');
 const express = require('systemic-express/express');
 const expressJsdocSwagger = require('express-jsdoc-swagger');
+const { init: initializeExpressValidator } = require('express-oas-validator');
 
 module.exports = () => {
   const start = async ({ manifest = {}, app, config }) => {
@@ -9,7 +10,11 @@ module.exports = () => {
       extended: true,
     }));
     app.use(helmet());
-    expressJsdocSwagger(app)(config.openAPIOptions);
+    const instance = expressJsdocSwagger(app)(config.openAPIOptions);
+
+    instance.on('finish', data => {
+      initializeExpressValidator(data);
+    });
 
     /**
      * GET /__/manifest

@@ -41,6 +41,15 @@ module.exports = () => {
       return Promise.all(saveRequest);
     };
 
+    const prQuality = (commits, changedFiles, body) => {
+      if (body.length === 0) return 'UNACCEPTABLE';
+      if (commits === 1 && changedFiles > 50) return 'VERY_HARD';
+      if (commits > 1 && changedFiles > 50) return 'HARD';
+      if (commits === 1 && changedFiles < 50) return 'MEDIUM_HARD';
+      if (commits > 1 && changedFiles < 50) return 'GOOD';
+      return 'OK';
+    };
+
     const upsertPRInfo = async (owner, repository, prInfo) => {
       logger.info(`Retrieving PR (${prInfo.number}) details...`);
       const { data: githubPRDetail } = await github.getPRDetail({
@@ -63,7 +72,7 @@ module.exports = () => {
         additions: githubPRDetail.additions,
         deletions: githubPRDetail.deletions,
         changed_files: githubPRDetail.changed_files,
-        type: 'BIG', // TODO: add business rule
+        review_quality: prQuality(githubPRDetail.commits, githubPRDetail.changed_files, githubPRDetail.body),
       };
       logger.info('Saving PR info...');
       await store.upsertPRInfo(prData);
