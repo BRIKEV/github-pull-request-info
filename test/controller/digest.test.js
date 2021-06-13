@@ -27,7 +27,7 @@ describe('Digest method Tests', () => {
 
   after(() => sys.stop());
 
-  it.only('should save the right amount of users', async () => {
+  it('should save the right amount of users', async () => {
     const testRepo = 'test-repo';
     const testOrg = 'test-org';
     nock('https://api.github.com')
@@ -58,9 +58,13 @@ describe('Digest method Tests', () => {
     expect(projects).to.eql(orgRepo);
     const { rows: users } = await pgAPI.query('SELECT * FROM info.user');
     const { rows: noReviewedPR } = await pgAPI.query('SELECT * FROM info.reviewer WHERE status = \'NO_REVIEWED\'');
+    const { rows: reviewedPR } = await pgAPI.query('SELECT * FROM info.reviewer WHERE status = \'REVIEWED\'');
+    const { rows: greatReviewedPR } = await pgAPI.query('SELECT * FROM info.reviewer WHERE review_quality = \'GREAT_REVIEW\'');
     const { rows: dbPullRequests } = await pgAPI.query('SELECT * FROM info.pull_request');
     expect(users).to.have.length(7);
     expect(dbPullRequests).to.have.length(3);
     expect(noReviewedPR).to.have.length(8);
+    expect(reviewedPR).to.have.length(5);
+    expect(greatReviewedPR).to.have.length(1);
   });
 });

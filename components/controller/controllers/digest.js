@@ -81,14 +81,14 @@ module.exports = () => {
       const changeRequested = filterByState(githubPRReviewers, 'CHANGES_REQUESTED');
       const approveChanges = filterByState(githubPRReviewers, 'APPROVED');
       const reviewers = approveChanges.map(review => {
-        const approvedAfterRequestChanges = changeRequested.find(({ id }) => id === review.id);
+        const approvedAfterRequestChanges = changeRequested.find(({ user }) => user.id === review.user.id);
         return {
           ...review.user,
           status: 'REVIEWED',
           reviewQuality: approvedAfterRequestChanges ? 'GREAT_REVIEW' : 'OK',
         };
       });
-      return saveReviewers(prInfo, reviewers);
+      return saveReviewers(prInfo.id, reviewers);
     };
 
     const processPR = (owner, repository) => async prInfo => {
