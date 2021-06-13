@@ -24,25 +24,54 @@ module.exports = () => {
 
     const saveNonReviewers = async (prId, nonReviewers) => {
       logger.info(`Saving PR (${prId}) ${nonReviewers.length} no reviewer users`);
-      const saveRequest = nonReviewers.map(nonReviewer => (
-        Promise.all([
-          store.upsertUser(userPayload(nonReviewer)),
-          store.saveNonReviewers({
-            prId,
-            userId: nonReviewer.id,
-            status: 'NO_REVIEWED',
-            review_quality: 'MISSING',
-          }),
-        ])
-      ));
+      const saveUsers = nonReviewers.map(async nonReviewer => {
+        await store.upsertUser(userPayload(nonReviewer));
+      });
+      await Promise.all(saveUsers);
+      const saveRequest = nonReviewers.map(async nonReviewer => {
+        await store.saveNonReviewers({
+          pull_request_id: prId,
+          user_id: nonReviewer.id,
+          status: 'NO_REVIEWED',
+          review_quality: 'MISSING',
+        });
+      });
       return Promise.all(saveRequest);
     };
 
-    const processPR = async prInfo => {
-      // Save reviewers do not review
-      await saveNonReviewers(prInfo.requested_reviewers);
-      // GET PR Detail & save PR info
+    const upsertPRInfo = async (owner, repository, prInfo) => {
+      logger.info(`Retrieving PR (${prInfo.number}) details...`);
+      const { data: githubPRDetail } = await github.getPRDetail({
+        urlParams: {
+          owner,
+          repository,
+          prNumber: prInfo.number,
+        },
+      });
+      // Save owner
+      logger.info('Saving PR owner...');
+      await store.upsertUser(userPayload(prInfo.user));
+      const prData = {
+        id: prInfo.id,
+        user_id: prInfo.user.id,
+        number: prInfo.number,
+        state: prInfo.state,
+        repository_id: prInfo.base.repo.id,
+        commits: githubPRDetail.commits,
+        additions: githubPRDetail.additions,
+        deletions: githubPRDetail.deletions,
+        changed_files: githubPRDetail.changed_files,
+        type: 'BIG', // TODO: add business rule
+      };
+      logger.info('Saving PR info...');
+      await store.upsertPRInfo(prData);
+    };
 
+    const processPR = (owner, repository) => async prInfo => {
+      // GET PR Detail & save PR info
+      await upsertPRInfo(owner, repository, prInfo);
+      // Save reviewers do not review
+      await saveNonReviewers(prInfo.id, prInfo.requested_reviewers);
       // Get reviews endpoint and save that info
     };
 
@@ -68,8 +97,8 @@ module.exports = () => {
       logger.info(`Digesting repository ${owner}/${repository}`);
       const prs = await getPRs(owner, repository);
       await saveProjectInfo(owner, repository, prs[0]);
-      // const processPRs = prs.map(processPR);
-      // return Promise.all(processPRs);
+      const processPRs = prs.map(processPR(owner, repository));
+      return Promise.all(processPRs);
     };
     return { digestRepo };
   };

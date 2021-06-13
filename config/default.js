@@ -90,7 +90,7 @@ module.exports = {
         auth,
       },
       getPRDetail: {
-        url: 'https://api.github.com/repos/:owner/:repository/pulls/:prrNumber',
+        url: 'https://api.github.com/repos/:owner/:repository/pulls/:prNumber',
         method: 'get',
         auth,
       },

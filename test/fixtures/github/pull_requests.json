@@ -14,7 +14,7 @@
       "user": {
           "login": "userTest1",
           "id": 1,
-          "node_id": "MDQ6VXNlcjE5Mjg0Njc3",
+          "node_id": "randomGithubHash",
           "avatar_url": "https://avatars.githubusercontent.com/u/1?v=4",
           "gravatar_id": "",
           "url": "https://api.github.com/users/userTest1",
@@ -36,14 +36,14 @@
       "updated_at": "2021-06-09T10:59:08Z",
       "closed_at": "2021-06-09T10:59:07Z",
       "merged_at": "2021-06-09T10:59:07Z",
-      "merge_commit_sha": "c1ed15304a60b34a6e7315badebdc69687c0a14f",
+      "merge_commit_sha": "randomGithubHash",
       "assignee": null,
       "assignees": [],
       "requested_reviewers": [
           {
               "login": "userTest2",
               "id": 2,
-              "node_id": "MDQ6VXNlcjUwNDA2NDAw",
+              "node_id": "randomGithubHash",
               "avatar_url": "https://avatars.githubusercontent.com/u/2?v=4",
               "gravatar_id": "",
               "url": "https://api.github.com/users/userTest2",
@@ -63,7 +63,7 @@
           {
               "login": "userTest3",
               "id": 3,
-              "node_id": "MDQ6VXNlcjU1OTQ4NDgx",
+              "node_id": "randomGithubHash",
               "avatar_url": "https://avatars.githubusercontent.com/u/3?v=4",
               "gravatar_id": "",
               "url": "https://api.github.com/users/userTest3",
@@ -89,16 +89,16 @@
       "review_comments_url": "https://api.github.com/repos/test-org/test-repo/pulls/3/comments",
       "review_comment_url": "https://api.github.com/repos/test-org/test-repo/pulls/comments{/number}",
       "comments_url": "https://api.github.com/repos/test-org/test-repo/issues/3/comments",
-      "statuses_url": "https://api.github.com/repos/test-org/test-repo/statuses/252599bb7199db4d38b69c4031fb35222e2d58b1",
+      "statuses_url": "https://api.github.com/repos/test-org/test-repo/statuses/randomGithubHash",
       "head": {
           "label": "test-org:feat/search-feature",
           "ref": "feat/search-feature",
-          "sha": "252599bb7199db4d38b69c4031fb35222e2d58b1",
+          "sha": "randomGithubHash",
           "user": {
               "login": "test-org",
               "id": 1,
-              "node_id": "MDEyOk9yZ2FuaXphdGlvbjM4NzgxMTE5",
-              "avatar_url": "https://avatars.githubusercontent.com/u/38781119?v=4",
+              "node_id": "randomGithubHash",
+              "avatar_url": "https://avatars.githubusercontent.com/u/1?v=4",
               "gravatar_id": "",
               "url": "https://api.github.com/users/test-org",
               "html_url": "https://github.com/test-org",
@@ -116,15 +116,15 @@
           },
           "repo": {
               "id": 1,
-              "node_id": "MDEwOlJlcG9zaXRvcnkxOTAzNjI4NTM=",
+              "node_id": "randomGithubHash=",
               "name": "test-repo",
               "full_name": "test-org/test-repo",
               "private": true,
               "owner": {
                   "login": "test-org",
                   "id": 1,
-                  "node_id": "MDEyOk9yZ2FuaXphdGlvbjM4NzgxMTE5",
-                  "avatar_url": "https://avatars.githubusercontent.com/u/38781119?v=4",
+                  "node_id": "randomGithubHash",
+                  "avatar_url": "https://avatars.githubusercontent.com/u/1?v=4",
                   "gravatar_id": "",
                   "url": "https://api.github.com/users/test-org",
                   "html_url": "https://github.com/test-org",
@@ -218,12 +218,12 @@
       "base": {
           "label": "test-org:master",
           "ref": "master",
-          "sha": "860be19272472bd4bcbd409bf42452a3251eaae9",
+          "sha": "randomGithubHash",
           "user": {
               "login": "test-org",
               "id": 1,
-              "node_id": "MDEyOk9yZ2FuaXphdGlvbjM4NzgxMTE5",
-              "avatar_url": "https://avatars.githubusercontent.com/u/38781119?v=4",
+              "node_id": "randomGithubHash",
+              "avatar_url": "https://avatars.githubusercontent.com/u/1?v=4",
               "gravatar_id": "",
               "url": "https://api.github.com/users/test-org",
               "html_url": "https://github.com/test-org",
@@ -241,15 +241,15 @@
           },
           "repo": {
               "id": 1,
-              "node_id": "MDEwOlJlcG9zaXRvcnkxOTAzNjI4NTM=",
+              "node_id": "randomGithubHash=",
               "name": "test-repo",
               "full_name": "test-org/test-repo",
               "private": true,
               "owner": {
                   "login": "test-org",
                   "id": 1,
-                  "node_id": "MDEyOk9yZ2FuaXphdGlvbjM4NzgxMTE5",
-                  "avatar_url": "https://avatars.githubusercontent.com/u/38781119?v=4",
+                  "node_id": "randomGithubHash",
+                  "avatar_url": "https://avatars.githubusercontent.com/u/1?v=4",
                   "gravatar_id": "",
                   "url": "https://api.github.com/users/test-org",
                   "html_url": "https://github.com/test-org",
@@ -363,7 +363,7 @@
               "href": "https://api.github.com/repos/test-org/test-repo/pulls/3/commits"
           },
           "statuses": {
-              "href": "https://api.github.com/repos/test-org/test-repo/statuses/252599bb7199db4d38b69c4031fb35222e2d58b1"
+              "href": "https://api.github.com/repos/test-org/test-repo/statuses/randomGithubHash"
           }
       },
       "author_association": "CONTRIBUTOR",
@@ -373,7 +373,7 @@
   {
       "url": "https://api.github.com/repos/test-org/test-repo/pulls/2",
       "id": 2,
-      "node_id": "MDExOlB1bGxSZXF1ZXN0NjYxNzg4MTE5",
+      "node_id": "randomGithubHash",
       "html_url": "https://github.com/test-org/test-repo/pull/2",
       "diff_url": "https://github.com/test-org/test-repo/pull/2.diff",
       "patch_url": "https://github.com/test-org/test-repo/pull/2.patch",
@@ -385,7 +385,7 @@
       "user": {
           "login": "userTest3",
           "id": 3,
-          "node_id": "MDQ6VXNlcjU1OTQ4NDgx",
+          "node_id": "randomGithubHash",
           "avatar_url": "https://avatars.githubusercontent.com/u/3?v=4",
           "gravatar_id": "",
           "url": "https://api.github.com/users/userTest3",
@@ -407,14 +407,14 @@
       "updated_at": "2021-06-09T09:09:10Z",
       "closed_at": "2021-06-09T09:09:10Z",
       "merged_at": "2021-06-09T09:09:10Z",
-      "merge_commit_sha": "7d1a02c2acc9a277486ef45e44e17384abae3104",
+      "merge_commit_sha": "randomGithubHash",
       "assignee": null,
       "assignees": [],
       "requested_reviewers": [
           {
               "login": "userTest4",
               "id": 4,
-              "node_id": "MDQ6VXNlcjExNTU0NTcz",
+              "node_id": "randomGithubHash",
               "avatar_url": "https://avatars.githubusercontent.com/u/4?v=4",
               "gravatar_id": "",
               "url": "https://api.github.com/users/userTest4",
@@ -434,7 +434,7 @@
           {
               "login": "userTest7",
               "id": 7,
-              "node_id": "MDQ6VXNlcjE2ODI3ODE1",
+              "node_id": "randomGithubHash",
               "avatar_url": "https://avatars.githubusercontent.com/u/7?v=4",
               "gravatar_id": "",
               "url": "https://api.github.com/users/userTest7",
@@ -454,7 +454,7 @@
           {
               "login": "userTest5",
               "id": 5,
-              "node_id": "MDQ6VXNlcjE3NjczMzE3",
+              "node_id": "randomGithubHash",
               "avatar_url": "https://avatars.githubusercontent.com/u/5?v=4",
               "gravatar_id": "",
               "url": "https://api.github.com/users/userTest5",
@@ -474,7 +474,7 @@
           {
               "login": "userTest1",
               "id": 1,
-              "node_id": "MDQ6VXNlcjE5Mjg0Njc3",
+              "node_id": "randomGithubHash",
               "avatar_url": "https://avatars.githubusercontent.com/u/1?v=4",
               "gravatar_id": "",
               "url": "https://api.github.com/users/userTest1",
@@ -494,7 +494,7 @@
           {
               "login": "userTest2",
               "id": 2,
-              "node_id": "MDQ6VXNlcjUwNDA2NDAw",
+              "node_id": "randomGithubHash",
               "avatar_url": "https://avatars.githubusercontent.com/u/2?v=4",
               "gravatar_id": "",
               "url": "https://api.github.com/users/userTest2",
@@ -520,16 +520,16 @@
       "review_comments_url": "https://api.github.com/repos/test-org/test-repo/pulls/2/comments",
       "review_comment_url": "https://api.github.com/repos/test-org/test-repo/pulls/comments{/number}",
       "comments_url": "https://api.github.com/repos/test-org/test-repo/issues/2/comments",
-      "statuses_url": "https://api.github.com/repos/test-org/test-repo/statuses/f2d904c8ba11c3909639be7cc41745ff2b44c59e",
+      "statuses_url": "https://api.github.com/repos/test-org/test-repo/statuses/randomGithubHash",
       "head": {
           "label": "test-org:chapter_exam_design",
           "ref": "chapter_exam_design",
-          "sha": "f2d904c8ba11c3909639be7cc41745ff2b44c59e",
+          "sha": "randomGithubHash",
           "user": {
               "login": "test-org",
               "id": 1,
-              "node_id": "MDEyOk9yZ2FuaXphdGlvbjM4NzgxMTE5",
-              "avatar_url": "https://avatars.githubusercontent.com/u/38781119?v=4",
+              "node_id": "randomGithubHash",
+              "avatar_url": "https://avatars.githubusercontent.com/u/1?v=4",
               "gravatar_id": "",
               "url": "https://api.github.com/users/test-org",
               "html_url": "https://github.com/test-org",
@@ -547,15 +547,15 @@
           },
           "repo": {
               "id": 1,
-              "node_id": "MDEwOlJlcG9zaXRvcnkxOTAzNjI4NTM=",
+              "node_id": "randomGithubHash=",
               "name": "test-repo",
               "full_name": "test-org/test-repo",
               "private": true,
               "owner": {
                   "login": "test-org",
                   "id": 1,
-                  "node_id": "MDEyOk9yZ2FuaXphdGlvbjM4NzgxMTE5",
-                  "avatar_url": "https://avatars.githubusercontent.com/u/38781119?v=4",
+                  "node_id": "randomGithubHash",
+                  "avatar_url": "https://avatars.githubusercontent.com/u/1?v=4",
                   "gravatar_id": "",
                   "url": "https://api.github.com/users/test-org",
                   "html_url": "https://github.com/test-org",
@@ -649,12 +649,12 @@
       "base": {
           "label": "test-org:master",
           "ref": "master",
-          "sha": "9a4b6e635722d6ca08d4f7890194e21a782c1063",
+          "sha": "randomGithubHash",
           "user": {
               "login": "test-org",
               "id": 1,
-              "node_id": "MDEyOk9yZ2FuaXphdGlvbjM4NzgxMTE5",
-              "avatar_url": "https://avatars.githubusercontent.com/u/38781119?v=4",
+              "node_id": "randomGithubHash",
+              "avatar_url": "https://avatars.githubusercontent.com/u/1?v=4",
               "gravatar_id": "",
               "url": "https://api.github.com/users/test-org",
               "html_url": "https://github.com/test-org",
@@ -672,15 +672,15 @@
           },
           "repo": {
               "id": 1,
-              "node_id": "MDEwOlJlcG9zaXRvcnkxOTAzNjI4NTM=",
+              "node_id": "randomGithubHash=",
               "name": "test-repo",
               "full_name": "test-org/test-repo",
               "private": true,
               "owner": {
                   "login": "test-org",
                   "id": 1,
-                  "node_id": "MDEyOk9yZ2FuaXphdGlvbjM4NzgxMTE5",
-                  "avatar_url": "https://avatars.githubusercontent.com/u/38781119?v=4",
+                  "node_id": "randomGithubHash",
+                  "avatar_url": "https://avatars.githubusercontent.com/u/1?v=4",
                   "gravatar_id": "",
                   "url": "https://api.github.com/users/test-org",
                   "html_url": "https://github.com/test-org",
@@ -794,7 +794,7 @@
               "href": "https://api.github.com/repos/test-org/test-repo/pulls/2/commits"
           },
           "statuses": {
-              "href": "https://api.github.com/repos/test-org/test-repo/statuses/f2d904c8ba11c3909639be7cc41745ff2b44c59e"
+              "href": "https://api.github.com/repos/test-org/test-repo/statuses/randomGithubHash"
           }
       },
       "author_association": "CONTRIBUTOR",
@@ -804,7 +804,7 @@
   {
       "url": "https://api.github.com/repos/test-org/test-repo/pulls/1",
       "id": 1,
-      "node_id": "MDExOlB1bGxSZXF1ZXN0NjYxNzU3NDM2",
+      "node_id": "randomGithubHash",
       "html_url": "https://github.com/test-org/test-repo/pull/1",
       "diff_url": "https://github.com/test-org/test-repo/pull/1.diff",
       "patch_url": "https://github.com/test-org/test-repo/pull/1.patch",
@@ -816,7 +816,7 @@
       "user": {
           "login": "userTest1",
           "id": 1,
-          "node_id": "MDQ6VXNlcjE5Mjg0Njc3",
+          "node_id": "randomGithubHash",
           "avatar_url": "https://avatars.githubusercontent.com/u/1?v=4",
           "gravatar_id": "",
           "url": "https://api.github.com/users/userTest1",
@@ -838,15 +838,15 @@
       "updated_at": "2021-06-04T15:41:54Z",
       "closed_at": "2021-06-04T15:41:54Z",
       "merged_at": "2021-06-04T15:41:54Z",
-      "merge_commit_sha": "a4ec92b1e27613f9e507f1d7d601d0e8bab1709a",
+      "merge_commit_sha": "randomGithubHash",
       "assignee": null,
       "assignees": [],
       "requested_reviewers": [
           {
               "login": "userTest6",
               "id": 6,
-              "node_id": "MDQ6VXNlcjEyNjg1MDUz",
-              "avatar_url": "https://avatars.githubusercontent.com/u/12685053?v=4",
+              "node_id": "randomGithubHash",
+              "avatar_url": "https://avatars.githubusercontent.com/u/6?v=4",
               "gravatar_id": "",
               "url": "https://api.github.com/users/userTest6",
               "html_url": "https://github.com/userTest6",
@@ -871,16 +871,16 @@
       "review_comments_url": "https://api.github.com/repos/test-org/test-repo/pulls/1/comments",
       "review_comment_url": "https://api.github.com/repos/test-org/test-repo/pulls/comments{/number}",
       "comments_url": "https://api.github.com/repos/test-org/test-repo/issues/1/comments",
-      "statuses_url": "https://api.github.com/repos/test-org/test-repo/statuses/fe5cb8eda76c91cf115fd6299bb5ea56f659e560",
+      "statuses_url": "https://api.github.com/repos/test-org/test-repo/statuses/randomGithubHash",
       "head": {
           "label": "test-org:feat/remove_old_assignments",
           "ref": "feat/remove_old_assignments",
-          "sha": "fe5cb8eda76c91cf115fd6299bb5ea56f659e560",
+          "sha": "randomGithubHash",
           "user": {
               "login": "test-org",
               "id": 1,
-              "node_id": "MDEyOk9yZ2FuaXphdGlvbjM4NzgxMTE5",
-              "avatar_url": "https://avatars.githubusercontent.com/u/38781119?v=4",
+              "node_id": "randomGithubHash",
+              "avatar_url": "https://avatars.githubusercontent.com/u/1?v=4",
               "gravatar_id": "",
               "url": "https://api.github.com/users/test-org",
               "html_url": "https://github.com/test-org",
@@ -898,15 +898,15 @@
           },
           "repo": {
               "id": 1,
-              "node_id": "MDEwOlJlcG9zaXRvcnkxOTAzNjI4NTM=",
+              "node_id": "randomGithubHash=",
               "name": "test-repo",
               "full_name": "test-org/test-repo",
               "private": true,
               "owner": {
                   "login": "test-org",
                   "id": 1,
-                  "node_id": "MDEyOk9yZ2FuaXphdGlvbjM4NzgxMTE5",
-                  "avatar_url": "https://avatars.githubusercontent.com/u/38781119?v=4",
+                  "node_id": "randomGithubHash",
+                  "avatar_url": "https://avatars.githubusercontent.com/u/1?v=4",
                   "gravatar_id": "",
                   "url": "https://api.github.com/users/test-org",
                   "html_url": "https://github.com/test-org",
@@ -1000,12 +1000,12 @@
       "base": {
           "label": "test-org:master",
           "ref": "master",
-          "sha": "9a4b6e635722d6ca08d4f7890194e21a782c1063",
+          "sha": "randomGithubHash",
           "user": {
               "login": "test-org",
               "id": 1,
-              "node_id": "MDEyOk9yZ2FuaXphdGlvbjM4NzgxMTE5",
-              "avatar_url": "https://avatars.githubusercontent.com/u/38781119?v=4",
+              "node_id": "randomGithubHash",
+              "avatar_url": "https://avatars.githubusercontent.com/u/1?v=4",
               "gravatar_id": "",
               "url": "https://api.github.com/users/test-org",
               "html_url": "https://github.com/test-org",
@@ -1023,15 +1023,15 @@
           },
           "repo": {
               "id": 1,
-              "node_id": "MDEwOlJlcG9zaXRvcnkxOTAzNjI4NTM=",
+              "node_id": "randomGithubHash=",
               "name": "test-repo",
               "full_name": "test-org/test-repo",
               "private": true,
               "owner": {
                   "login": "test-org",
                   "id": 1,
-                  "node_id": "MDEyOk9yZ2FuaXphdGlvbjM4NzgxMTE5",
-                  "avatar_url": "https://avatars.githubusercontent.com/u/38781119?v=4",
+                  "node_id": "randomGithubHash",
+                  "avatar_url": "https://avatars.githubusercontent.com/u/1?v=4",
                   "gravatar_id": "",
                   "url": "https://api.github.com/users/test-org",
                   "html_url": "https://github.com/test-org",
@@ -1145,7 +1145,7 @@
               "href": "https://api.github.com/repos/test-org/test-repo/pulls/1/commits"
           },
           "statuses": {
-              "href": "https://api.github.com/repos/test-org/test-repo/statuses/fe5cb8eda76c91cf115fd6299bb5ea56f659e560"
+              "href": "https://api.github.com/repos/test-org/test-repo/statuses/randomGithubHash"
           }
       },
       "author_association": "CONTRIBUTOR",

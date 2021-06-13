@@ -3,8 +3,8 @@ CREATE TABLE info.reviewer (
   user_id INTEGER REFERENCES info.user(id) ON DELETE CASCADE,
   pull_request_id INTEGER REFERENCES info.pull_request(id) ON DELETE CASCADE,
   number_of_comments INT NOT NULL DEFAULT 0,
-  status VARCHAR (10) NOT NULL,
-  review_quality VARCHAR (10) NOT NULL,
+  status VARCHAR (50) NOT NULL,
+  review_quality VARCHAR (50) NOT NULL,
   created_on TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()),
   updated_on TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now())
 );

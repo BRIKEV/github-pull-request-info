@@ -24,7 +24,18 @@ module.exports = () => {
       })
     );
 
-    return { saveNonReviewers, upsertUser, saveProjectInfo };
+    const upsertPRInfo = async savePRInfo => {
+      const { rows: [insertedProgress] } = await pg
+        .upsert(`${pg.schema}.pull_request`, savePRInfo);
+      return insertedProgress;
+    };
+
+    return {
+      saveNonReviewers,
+      upsertUser,
+      saveProjectInfo,
+      upsertPRInfo,
+    };
   };
 
   return { start };
